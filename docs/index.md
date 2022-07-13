@@ -6,5 +6,7 @@
 
 ## 雑記
 
-- [なんだっけ？](./reminder/index.md)
+- [Unityルール](./unity_rules/index.md)
+- [ShibaShelf開発について](./shelf_rules/index.md)
+- [なんだっけ？ となった時](./reminder/index.md)
 
