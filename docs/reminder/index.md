@@ -8,5 +8,16 @@
 - 実は通常はビルドしても中間言語で実行時にコンパイルするが、IL2CPPでビルドするとちゃんとビルドする。
 - Universal WindowsなんちゃらはWindowsストアで配布する時に使う。
 
+## どこにあったっけ……？
+
+#### Inspectorビューが消えた
+
+- Window > General > Inspector
+
+#### Visual Studioとの連携
+
+- Edit > Preferences > External Tools
+
+
 
 
