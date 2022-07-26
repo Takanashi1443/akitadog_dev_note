@@ -2,7 +2,13 @@
 
 ## 構築
 
+## ゲーム開発メモ
 
+- [MinoApp雑記](./games/mino_app/note.md)
+
+## アセットストアのアセットの使用
+
+- [Adorable 3D Items](./store_assets/adorable_3d_items/index.md)
 
 ## 雑記
 
