@@ -2,9 +2,22 @@
 
 ## 構築
 
+## モバイルゲーム開発メモ
+
+- [モバイルゲーム開発](./mobile_rules/index.md)
+
+
 ## ゲーム開発メモ
 
 - [MinoApp雑記](./games/mino_app/note.md)
+
+## コンポーネントの使い方
+
+- [Line Renderer](./components/line_renderer.md)
+
+## Unityレジストリの機能
+
+- [Shader Graph](./builtin_assets/shader_graph/index.md)
 
 ## アセットストアのアセットの使用
 
