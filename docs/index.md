@@ -26,6 +26,7 @@
 ## 雑記
 
 - [Unityルール](./unity_rules/index.md)
+- [Unityのテクニック](./unity_techs/index.md)
 - [ShibaShelf開発について](./shelf_rules/index.md)
 - [なんだっけ？ となった時](./reminder/index.md)
 
