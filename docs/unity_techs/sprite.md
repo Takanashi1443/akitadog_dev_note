@@ -1,0 +1,24 @@
+# Spriteの仕組み
+
+## 表示の仕組みとShaderGraphを使用する際の注意
+
+SpriteRendererにはSpriteという項目があり、そこにSpriteとしてインポートした画像を設定することができる。
+
+これにより、MeshRendererコンポーネントがレンダリングを担うオブジェクトと異なり、異なる見た目のSpriteを同じMaterialで表示させることができる。
+
+このSpriteに設定した画像は、シェーダの_MainTexにも使用され、逆に言えばSpriteの_MainTexにはこのSpriteの画像が使用されるため、
+
+Sprite用のマテリアルの_MainTexをマテリアルの設定項目から設定しようとしても反映されない。
+
+この仕組みはMaterialPropertyBlockと呼ばれる。
+
+（ShaderGraphなどの上でもデフォルトの_MainTexを設定することができ、ShaderGraphのプレビューではそれが表示されるが、ゲーム上では反映されない）
+
+ちなみに、_MainTex以外のパラメータをオブジェクトごとに設定するにはMesh Rendererと同様、[ゲームオブジェクトごとのMaterialを作成](./material_for_each_object.md)する必要がある。
+
+## Spriteをシーン上に配置する時の挙動
+
+Spriteは、ProjectビューからHierachy上やシーンビュー上に配置することができる。
+
+これは、デフォルトのSprite用マテリアルをマテリアルに、当該のSpriteをSpriteRendererのSpriteに設定したゲームオブジェクトをCreateすることと等しい。
+

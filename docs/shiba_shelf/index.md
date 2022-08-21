@@ -13,6 +13,7 @@ Elementsの名前はShibaXxxxとなるようにし、スクリプトの名前空
 エレメントには以下のものがある。
 
 - [ShibaPixeler](./shiba_pixeler.md) : ピクセルベースのゲームを作るためのツール。 
+- [ShibaShader](./shiba_shader.md) : 自作シェーダ群。備忘の意味も。
 - ShibaTheater : いわゆる会話シーン。
 
 

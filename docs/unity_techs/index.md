@@ -2,6 +2,9 @@
 
 ## 個別ページ
 
+- [Spriteの仕組み](./sprite.md)
+- [初期化関数の使い分け(Awake, OnEnable, Start)の使い分け](./awake_and_start.md)
+- [オブジェクトごとにマテリアルのパラメータを変更](./material_for_each_object.md)
 - [パーティクルシステム](./particle_system.md)
 
 ## アセットの仕様・設定など
@@ -33,31 +36,8 @@ Grid By Cell Sizeを選び、1枚あたりのピクセル数を入力し、Keep 
 
 
 
-### パーティクルシステム
-
-#### 前提
-
-パーティクル画像にはTextureとSpriteの両方使えるが、ここではSpriteを使用する。
-
-#### マテリアル作成（描画時の合成方法の設定）
-
-マテリアルを作成する。
-
-マテリアルにはMainTexとしてテクスチャを設定する場合が多いが、ここではテクスチャは設定しない。
-
-描画時の合成方法がマテリアルに依存する。
-
-新規マテリアルを作成し、シェーダーを、
-
-- 加算合成したい場合：Mobile/Particles/Additive
-
-
-に設定する。
-
-#### 
-
 #### 参考ページ
 
-- [ParticleSystemで連番アニメーションをする方法](https://light11.hatenadiary.com/entry/2018/12/06/224926)
-
+- [【Unity】スクリプトからMaterialをオブジェクトごとに変更](https://haraken.hatenablog.com/entry/2018/07/03/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%8B%E3%82%89Material%E3%82%92%E3%82%AA%E3%83%96%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%94%E3%81%A8%E3%81%AB%E5%A4%89%E6%9B%B4)
+- [【Unity】Renderer.materialで取得したマテリアルは自分で破棄しないとリークする話](https://light11.hatenadiary.com/entry/2019/11/03/223241)
 

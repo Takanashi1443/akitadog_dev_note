@@ -11,13 +11,18 @@
 
 - [MinoApp雑記](./games/mino_app/note.md)
 
+## Unityのテクニック
+
+- [標準的なプロジェクトの作成](./unity_techs/create_project.md)
+- [Unityのテクニック](./unity_techs/index.md)
+
+## Unityの標準アセットの機能
+
+- [Shader Graph](./builtin_assets/shader_graph/index.md)
+
 ## コンポーネントの使い方
 
 - [Line Renderer](./components/line_renderer.md)
-
-## Unityレジストリの機能
-
-- [Shader Graph](./builtin_assets/shader_graph/index.md)
 
 ## アセットストアのアセットの使用
 
@@ -26,7 +31,6 @@
 ## 雑記
 
 - [Unityルール](./unity_rules/index.md)
-- [Unityのテクニック](./unity_techs/index.md)
 - [ShibaShelf開発について](./shiba_shelf/index.md)
 - [なんだっけ？ となった時](./reminder/index.md)
 

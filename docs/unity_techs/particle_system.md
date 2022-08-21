@@ -53,18 +53,32 @@
 
 描画時の合成方法がマテリアルに依存する。
 
-新規マテリアルを作成し、シェーダーを、
+#### 加算合成
 
-- 加算合成したい場合：Mobile/Particles/Additive
+新規マテリアルを作成し、シェーダーを、Universal Rendering Pipeline/Particles/Litに設定する。
 
+- Surface TypeをTransparent
+- Blending ModeをAdditive
+- Color ModeをMultiply
 
-に設定する。
+にする。
+
+Color Modeはパーティクルに設定した色と元のテクスチャの色の合成の仕方である。
+
 
 ### ParticleSystemの設定
 
 Particle Systemの設定項目から「Texture Sheet Animation」にチェックを入れ、内容を開く。
 
 ModeをSpritesにする。
+
+### 疑問
+
+パーティクルのColorはパーティクルごとに設定できるようになっているが、Spriteと同様にMaterialPropertyBlockなのか？
+
+→ 多分そう。PerticleSystemコンポーネントの下の方に「Material Property Block is used to modify these values」とある。
+パーティクル用のシェーダはParticleSystem専用と考えた方が良さそう。
+
 
 
 ### 参考ページ
