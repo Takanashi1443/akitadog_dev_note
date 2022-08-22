@@ -31,6 +31,7 @@
 ## 雑記
 
 - [Unityルール](./unity_rules/index.md)
+    - [スタンダードなプロジェクト作成](./unity_rules/create_standard_project.md)
 - [ShibaShelf開発について](./shiba_shelf/index.md)
 - [なんだっけ？ となった時](./reminder/index.md)
 
