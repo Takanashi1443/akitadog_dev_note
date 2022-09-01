@@ -72,6 +72,23 @@ Particle Systemの設定項目から「Texture Sheet Animation」にチェック
 
 ModeをSpritesにする。
 
+
+### Tips
+
+#### パーティクルがParticleSystem本体に追従しないようにする
+
+Particle Systemの設定項目から「Simulation Space」をWorldにする。
+
+#### パーティクルシステムの描画順
+
+RendererモジュールのSorting LayerとOrder in Layerを設定する。
+
+#### 移動方向は一定にしながらある程度広い範囲から出す
+
+ShapeをConeにする。Angleを0にすると移動方向が上のみになる。
+（違う方向に飛ばしたい場合はRotationを変える）
+Radiusを変えるとその半径から出るようになる。
+
 ### 疑問
 
 パーティクルのColorはパーティクルごとに設定できるようになっているが、Spriteと同様にMaterialPropertyBlockなのか？

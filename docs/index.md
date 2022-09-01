@@ -18,11 +18,14 @@
 
 ## Unityの標準アセットの機能
 
+- [TextMeshPro](./builtin_assets/text_mesh_pro/index.md)
 - [Shader Graph](./builtin_assets/shader_graph/index.md)
+
 
 ## コンポーネントの使い方
 
 - [Line Renderer](./components/line_renderer.md)
+- [Particle System](./components/particle_system.md)
 
 ## アセットストアのアセットの使用
 
