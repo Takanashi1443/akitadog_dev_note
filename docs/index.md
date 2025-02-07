@@ -1,12 +1,10 @@
 # 目次
 
-## ドキュメントの使い方（UserGuide）
+## 使い方
 
-- [MkDocs](userguide/mkdocs.md)
-- [Git管理](userguide/git.md)
-- [フォルダ構成](userguide/folder_structure.md)
+ルートフォルダでmkdocs serveを実行してローカルサーバーを起動。
 
-## Unity（Unity）
+左カラムから見たい内容を選ぶ。
 
 ## メモ
 

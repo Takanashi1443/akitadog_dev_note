@@ -5,7 +5,15 @@ markdown_extensions:
   - def_list
 nav:
   - Home: 'index.md'
-  - 'User Guide':
+  - '取り扱い説明(userguide)':
     - 'MkDocs': 'userguide\mkdocs.md'
     - 'Git管理': 'userguide\git.md'
     - 'フォルダ構成': 'userguide\folder_structure.md'
+  - 'Unity':
+    - '重要な機能(Important Function)':
+      - 'Unity Accelerator': 'unity\important_function\unity_accelerator.md'
+      - 'Addressables': 'unity\important_function\addressables.md'
+    - 'ビルトインアセット(Built-in Asset)':
+      - 'TextMeshPro': 'unity\builtin_assets\textmeshpro.md'
+    - '基本設計(Basic Design)':
+      - '2Dカメラ': 'unity\basic_design\2d_camera.md'
