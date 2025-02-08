@@ -59,11 +59,20 @@ originはリモートとの関連付けの名前で、他の名前でも良い�
 :   rm(remote, 削除)により削除する。
 
 ```
-git remote -v # 情報を表示
+git remote -v           # 情報を表示
 git remote rm origin
 ```
 
+`git管理されたくないファイルがGit管理されてしまった`
 
+:   .gitignoreを削除するだけでは反映されず、一旦キャッシュを削除する必要がある。
+    .gitignoreを編集したのち、下記コマンドでaddし直す。
+
+```
+git rm -r --cached .    # ファイル全体キャッシュ削除
+git add -A              # 改めて全ファイルを管理に入れ直す(gitignoreの指定は反映される)
+git ls-files -oi --exclude-standard     # 管理外のファイルを確認できる
+```
 
 #### 
 

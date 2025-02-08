@@ -8,12 +8,14 @@
 ├ ここでmkdocs serveでローカルサーバ起動.txt : 何もかも忘れた時用の覚書。
 ├ .gitignore : Gitで管理しないフォルダ・ファイルを記載。
 │
-├ docs : MarkDownが入っている。
+├ markdowns : MarkDownファイル群が入っている。通常はdocsという名前のフォルダだが、設定で変更している。
 │  ├ index.md : トップページ。
 │  ├ 文書のフォルダ群
 │  │  ├ 各文書
 │  │  ├ (文書名_img)フォルダ
 │  │     └ 各文書から参照される画像
+│
+├ docs : buildコマンドでHTMLファイル群が格納される。
 │
 ├ materials : 作図用PowerPointファイルなど、直接Webサイトとして公開しないが、共有するファイル群。
 │  └ 日付など

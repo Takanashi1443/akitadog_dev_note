@@ -6,6 +6,15 @@
 
 :   MkDocsフォルダでコマンドプロンプトを起動、mkdocs serve
 
+`HTMLファイル群をビルド`
+
+:   MkDocsフォルダでコマンドプロンプトを起動、mkdocs build。
+    出力先フォルダを変えることもできる。
+
+```
+mkdocs build -d XXXX
+```
+
 `色々設定`
 
 :   ルートフォルダのmkdocs.ymlをいじる
@@ -27,6 +36,14 @@ markdown_extensions:
 ```
 
 ## その他
+
+`Markdownファイル群を入れるフォルダを変更する`
+
+:   mkdocs.ymlに追記。例えばmarkdownsフォルダに入れるには
+
+```
+docs_dir: markdowns
+```
 
 `ナビゲーションバー`
 
