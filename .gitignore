@@ -1,2 +1,10 @@
 # Exported folder by MkDocs will be uploaded for GitHub Pages
 # site
+
+
+# May include private information
+raw_materials
+
+# For my information
+ここでmkdocs serveでローカルサーバ起動.txt
+mkdocs_local.url
