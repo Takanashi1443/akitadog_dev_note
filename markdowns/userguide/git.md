@@ -52,7 +52,14 @@ git push -u origin main
 でリモートリポジトリにpushできる。
 originはリモートとの関連付けの名前で、他の名前でも良い。
 
-#### トラブルシューティング
+
+## Github Pagesで公開する
+
+Github Pagesはルートかdocsフォルダしか公開対象に選べないため、
+mkdocsのMarkdownファイル群を入れるフォルダをMarkdownsにし、
+buildで出力するフォルダをdocsにした。
+
+## トラブルシューティング
 
 `git remoteの設定を間違えた`
 
@@ -74,7 +81,6 @@ git add -A              # 改めて全ファイルを管理に入れ直す(gitig
 git ls-files -oi --exclude-standard     # 管理外のファイルを確認できる
 ```
 
-#### 
 
 ### 参考ページ
 

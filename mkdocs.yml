@@ -11,6 +11,8 @@ nav:
     - 'Git管理': 'userguide\git.md'
     - 'フォルダ構成': 'userguide\folder_structure.md'
   - 'Unity':
+    - 'まず最初にやること(First of All)':
+      - '全体': 'unity\first_of_all\index.md'
     - '重要な機能(Important Function)':
       - 'Unity Accelerator': 'unity\important_function\unity_accelerator.md'
       - 'Addressables': 'unity\important_function\addressables.md'
