@@ -1,5 +1,6 @@
 site_name: My Docs
 docs_dir: markdowns
+site_dir: docs
 theme:
   name: material
 markdown_extensions:
@@ -13,6 +14,7 @@ nav:
   - 'Unity':
     - 'まず最初にやること(First of All)':
       - '全体': 'unity\first_of_all\index.md'
+      - 'Git管理': 'unity\first_of_all\git.md'
     - '重要な機能(Important Function)':
       - 'Unity Accelerator': 'unity\important_function\unity_accelerator.md'
       - 'Addressables': 'unity\important_function\addressables.md'
