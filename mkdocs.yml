@@ -21,4 +21,6 @@ nav:
     - 'ビルトインアセット(Built-in Asset)':
       - 'TextMeshPro': 'unity\builtin_assets\textmeshpro.md'
     - '基本設計(Basic Design)':
+      - '用語': 'unity\basic_design\terms.md'
       - '2Dカメラ': 'unity\basic_design\2d_camera.md'
+      - 'CSV+ScriptableObjectデータベース': 'unity\basic_design\csv_so_database.md'
