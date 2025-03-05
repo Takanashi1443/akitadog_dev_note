@@ -11,16 +11,21 @@ nav:
     - 'MkDocs': 'userguide\mkdocs.md'
     - 'Git管理': 'userguide\git.md'
     - 'フォルダ構成': 'userguide\folder_structure.md'
-  - 'Unity':
+  - 'Unity': 
+    - '各章について': 'unity\index.md'
     - 'まず最初にやること(First of All)':
       - '全体': 'unity\first_of_all\index.md'
+      - 'フォルダ構成': 'unity\first_of_all\folder.md'
       - 'Git管理': 'unity\first_of_all\git.md'
     - '重要な機能(Important Function)':
       - 'Unity Accelerator': 'unity\important_function\unity_accelerator.md'
       - 'Addressables': 'unity\important_function\addressables.md'
-    - 'ビルトインアセット(Built-in Asset)':
-      - 'TextMeshPro': 'unity\builtin_assets\textmeshpro.md'
+      - 'ScriptableObject': 'unity\important_function\scriptableobject.md'
+      - 'RuntimeInitializeOnLoadMethod': 'unity\important_function\riolm.md'
     - '基本設計(Basic Design)':
       - '用語': 'unity\basic_design\terms.md'
-      - '2Dカメラ': 'unity\basic_design\2d_camera.md'
       - 'CSV+ScriptableObjectデータベース': 'unity\basic_design\csv_so_database.md'
+      - 'セーブとロード': 'unity\basic_design\save.md'
+      - '2Dカメラ': 'unity\basic_design\2d_camera.md'
+    - 'ビルトインアセット(Built-in Asset)':
+      - 'TextMeshPro': 'unity\builtin_assets\textmeshpro.md'

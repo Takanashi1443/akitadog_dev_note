@@ -8,10 +8,22 @@
 
 `MasterおよびCatalog`
 
-:   スクリプト名、クラス名に使用。
+:   XxxxMasterやXxxxCalalogの名前でスクリプト名、クラス名に使用する。
     マスタデータおよび、マスタデータを集めたものを指す。
     [CSVとScriptableObjectによるデータベース](./csv_so_database.md)で使用する。
     RecordおよびDataBaseと同じような意味合いだが、これらの用語はより一般的に使うため避けている。
+
+`SaveOrganizer`
+
+:   XxxxSaveOrganizerのようなクラス名で、[セーブ・ロード](./save.md)で使用する。
+    セーブ・ロードに関してセーブデータファイルとのやりとりを行う。
+
+`SaveOperator`
+
+:   XxxxSaveOperatorのようなクラス名で、[セーブ・ロード](./save.md)で使用する。
+    SaveOrganizerからデータを構成するための情報を受け取り、利用できる形に変換する。
+    また、セーブデータに対する処理やアクセサを提供する。
+
 
 
 ## 参考サイト

@@ -24,15 +24,34 @@
 :   単一種類のマスタデータをリストなどの形で保持するGameObjectクラス。
     また、CSVファイルからマスタデータを作成する関数「Build」を持つ。
 
-## 要件・設計
+## 要件・設計（基本編）
 
 この仕組みは、下記のような要件を実現できるように設計される。
 
-`CatalogはMasterのリストを保持し、またそれをcsvファイルから形成できる。`
+### CatalogはMasterのリストを保持し、またそれをcsvファイルから形成できる
 
 ![CatalogはMasterを保持し、またそれをcsvファイルから形成できる](./img_csv_so_database/catalog_has_masters_and_can_build_from_csv.png)
 
-`csvファイルから`
+### 各CatalogはCatalogBuilderによってビルドされる
+
+![各CatalogはCatalogBuilderによってビルドされる](./img_csv_so_database/catalogs_are_built_by_catalog_builder.png)
+
+### Catalogsはゲーム起動時に生成され、各シーンのGameObjectから参照される
+
+![Catalogsはゲーム起動時に生成され、各シーンのGameObjectから参照される](./img_csv_so_database/static_catalogs_are_referred_by_gameobjects.png)
+
+### 要件の整理・補足
+
+- Catalogは自身のCSVファイルへのパスを持たない。
+- CatalogBuilderはCSVファイルへのパスを持つ。CatalogBuilderシーンで各Catalogプレハブの中身を更新するのに使用され、ゲームには含まれない。
+
+## 実装（基本編）
+
+### ゲーム起動時にCatalogsを生成する
+
+
 
 ## 参考サイト
 
+- [【備忘録】ScriptableObjectとCSVの連携・「転生女騎士、アパートに住む【放置ゲーム】」の作り方（3）【Unity】](https://note.com/yamasho55/n/n04bd2f6d136d)
+- [【Unity】ゲーム中に常時必要なGameObjectがどのシーンから始めても存在するようにしてみよう](https://www.urablog.xyz/entry/2018/02/11/164734)
