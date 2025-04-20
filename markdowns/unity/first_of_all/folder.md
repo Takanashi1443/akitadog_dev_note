@@ -14,20 +14,30 @@
 ├ materials : 作図用PowerPointファイルなど、直接Webサイトとして公開しないが、共有するファイル群。
 ├ raw_materials : 個人情報が含まれるスクリーンショットなど。Git管理しない。
 │  これらのフォルダの運用方法はこのドキュメントと同じ。
-|
+├ External : データベースに変換するためのCSVファイルが含まれるフォルダ。
+│  詳しくは[こちら](../basic_design/csv_so_database.md)を参照のこと。
+│
 ├ (プロジェクト名)
 |  ├ .gitignore : ゲームルートフォルダから見たgitignore。
    ├ Assets
       ├ (プロジェクト名)
-      │  ├ Common : ゲーム全体で共通する定数など。
-      │  ├ Special : 特別な動作をするもの。
+      │  ├ Scripts : スクリプト。
+      │  │  ├ Common : ゲーム全体で共通する定数クラスなど。
+      │  │  ├ Special : 特別な動作をするスクリプト。
+      │  │  │           
       ├
 
 ```
 
 最も外側のフォルダ（mkdocs.ymlがあるフォルダ）をプロジェクトルートフォルダ、Unityから見たルートフォルダをゲームルートフォルダと呼ぶ。
 
-### 補足
+頻出フォルダの中身へのリンク
+
+-[Scripts/Special](#scriptsspecial)
+
+## 補足
+
+### フォルダ分け方針
 
 `CommonとSpecial`
 
@@ -35,50 +45,10 @@
     ゲーム全体に影響を及ぼすものでも、それを直接参照するスクリプトが限定的なものはSpecialに入れる。
     例えば、RuntimeInitializeOnLoadMethod属性がつき、ゲーム全体の初期化を行うものはSpecialに入れる。
 
-## mkdocsの操作
+### 重要なフォルダの中身
 
-プロジェクトルートフォルダ内で
+#### Scripts/Special
 
-```
-
-mkdocs new .
-
-```
-
-とすると、プロジェクトルートフォルダをmkdocsのプロジェクトフォルダとし、docsフォルダとmkdocs.ymlが作成される。
-
-以下の処理を行う。
-
-- mkdocs.ymlの中身を、例として以下のようにする。
-
-```
-
-site_name: My Docs
-docs_dir: markdowns
-site_dir: docs
-theme:
-  name: material
-markdown_extensions:
-  - def_list
-nav:
-  - Home: 'index.md'
-
-```
-
-- 「docs」フォルダを「markdowns」に変更。
-
-- mkdocs serveをコマンドラインから実行し、ローカルサーバが起動してWEBページを開けることを確認。
-- 複数のドキュメントを同時に開く場合、このようなコマンドにより複数ページをserveすることができる。
-
-```
-
-mkdocs serve --dev-addr=127.0.0.2:8000
-
-```
-
-
-# 参考ページ
-
--[MkDocsの使い方](https://zenn.dev/shotakaha/scraps/1aab3983e63624)
--[Material for MkDocsで生成したサイトをGithub Pagesで公開する](https://zenn.dev/y16ra/articles/6266a87b048bd2)
+- ThroughoutInitializer.cs: [ゲーム起動時に実行するスクリプト](./../important_function/riolm.md)
+- (ProjectName)Actions.cs: [InputSystemで入力を受け取るために自動生成されるスクリプト](./../basic_design/input.md)
 
