@@ -10,12 +10,15 @@
 
 ## 引っかかった点
 
-アンダーバーの文字を使用していなくても、「アンダーバーの文字がありません」という警告が出る場合がある。
+文字を選んで登録する場合、アンダーバーの文字を使用していなくても、「アンダーバーの文字がありません」という警告が出る場合がある。
 
 使用する文字ファイルにアンダーバーと両括弧（半角）を追加すると出なくなる。
 
+# めんどくさいから日本語の文字を一通り登録する
 
+[このページ](https://www.midnightunity.net/textmeshpro-japanese-font/)などを参照。
 
 ## 参考ページ
 
 - [UnityのTextMeshProを使ってみる](https://gametukurikata.com/ui/textmeshpro)
+- [TextMesh Pro で日本語フォントを使う方法【Unity】](https://www.midnightunity.net/textmeshpro-japanese-font/)

@@ -29,3 +29,7 @@ nav:
       - '2Dカメラ': 'unity\basic_design\2d_camera.md'
     - 'ビルトインアセット(Built-in Asset)':
       - 'TextMeshPro': 'unity\builtin_assets\textmeshpro.md'
+    - 'ベストプラクティス(Best Practice)':
+      - '目次': 'unity\best_practice\index.md'
+    - 'トラブルシューティング(Troubles)':
+      - '目次': 'unity\troubles\index.md'

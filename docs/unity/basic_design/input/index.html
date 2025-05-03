@@ -808,6 +808,138 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    ベストプラクティス(Best Practice)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            ベストプラクティス(Best Practice)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best_practice/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    目次
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    トラブルシューティング(Troubles)
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            トラブルシューティング(Troubles)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    目次
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -868,6 +1000,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#xboxusb" class="md-nav__link">
+    <span class="md-ellipsis">
+      XBoxなどの一般的なコントローラ以外のUSBコントローラを使用したい
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -902,7 +1043,7 @@
 <p>InputSystemアセット内に受け取る入力群を定義する。入力郡の名前は(プロジェクト名)Actionsとする。</p>
 </li>
 <li>
-<p>Generate C# Class → Applyにより(プロジェクト名)Actionsに対応するスクリプトを生成する。(プロジェクト名)InputControls.I(プロジェクト名)Actionsというインターフェイスが生成され、それを継承することでスクリプトが入力を受け取れるようになる。</p>
+<p>InputControlsのInspectorからGenerate C# Class → Applyにより(プロジェクト名)Actionsに対応するスクリプトを生成する。(プロジェクト名)InputControls.I(プロジェクト名)Actionsというインターフェイスが生成され、それを継承することでスクリプトが入力を受け取れるようになる。</p>
 </li>
 <li>
 <p>シーン内に「InputReceiver」というGameObjectを配置する。</p>
@@ -911,6 +1052,34 @@
 <p>InputReceiverに、シーンごとに作成するInputReceiverスクリプトを作成し、アタッチする。</p>
 </li>
 </ul>
+<h2 id="xboxusb">XBoxなどの一般的なコントローラ以外のUSBコントローラを使用したい</h2>
+<p>そのへんのUSBコントローラはGamePadでなくJoystickとして認識される場合がある。</p>
+<p>その場合、Actionの内容を</p>
+<pre><code>
+&lt;Joystick&gt;/button6
+
+</code></pre>
+<p>などとすると受け取れることがある。</p>
+<pre><code>
+public class AnyGamepadSniffer : MonoBehaviour
+{
+    void Update()
+    {
+        // 接続中すべてのデバイスをループ
+        foreach (var dev in InputSystem.devices)
+        {
+            // HID, Gamepad, Joystick いずれでも可
+            foreach (var btn in dev.allControls.OfType&lt;ButtonControl&gt;())
+            {
+                if (btn.wasPressedThisFrame)
+                    Debug.Log($&quot;{dev.displayName}/{btn.path} が押された&quot;);
+            }
+        }
+    }
+}
+
+</code></pre>
+<p>これでボタンを押した時にログが出れば、btn.path部分がボタンの名前になる。</p>
 
 
 

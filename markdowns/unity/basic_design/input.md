@@ -22,8 +22,46 @@ InputReceiverはInputSystemを使って作成したアクションのインタ�
 
 - InputSystemアセット内に受け取る入力群を定義する。入力郡の名前は(プロジェクト名)Actionsとする。
 
-- Generate C# Class → Applyにより(プロジェクト名)Actionsに対応するスクリプトを生成する。(プロジェクト名)InputControls.I(プロジェクト名)Actionsというインターフェイスが生成され、それを継承することでスクリプトが入力を受け取れるようになる。
+- InputControlsのInspectorからGenerate C# Class → Applyにより(プロジェクト名)Actionsに対応するスクリプトを生成する。(プロジェクト名)InputControls.I(プロジェクト名)Actionsというインターフェイスが生成され、それを継承することでスクリプトが入力を受け取れるようになる。
 
 - シーン内に「InputReceiver」というGameObjectを配置する。
 
 - InputReceiverに、シーンごとに作成するInputReceiverスクリプトを作成し、アタッチする。
+
+## XBoxなどの一般的なコントローラ以外のUSBコントローラを使用したい
+
+そのへんのUSBコントローラはGamePadでなくJoystickとして認識される場合がある。
+
+その場合、Actionの内容を
+
+```
+
+<Joystick>/button6
+
+```
+
+などとすると受け取れることがある。
+
+```
+
+public class AnyGamepadSniffer : MonoBehaviour
+{
+    void Update()
+    {
+        // 接続中すべてのデバイスをループ
+        foreach (var dev in InputSystem.devices)
+        {
+            // HID, Gamepad, Joystick いずれでも可
+            foreach (var btn in dev.allControls.OfType<ButtonControl>())
+            {
+                if (btn.wasPressedThisFrame)
+                    Debug.Log($"{dev.displayName}/{btn.path} が押された");
+            }
+        }
+    }
+}
+
+```
+
+これでボタンを押した時にログが出れば、btn.path部分がボタンの名前になる。
+
