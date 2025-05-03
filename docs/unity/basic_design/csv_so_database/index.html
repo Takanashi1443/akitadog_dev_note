@@ -809,6 +809,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      各Catalogをビルドするクラスを作る
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spritescriptableobject" class="md-nav__link">
+    <span class="md-ellipsis">
+      画像(Sprite)などをScriptableObjectに含めたい場合
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1sprite" class="md-nav__link">
+    <span class="md-ellipsis">
+      さらに、1つのアセットから複数のSpriteを生成している場合
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1194,6 +1236,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      各Catalogをビルドするクラスを作る
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tips
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spritescriptableobject" class="md-nav__link">
+    <span class="md-ellipsis">
+      画像(Sprite)などをScriptableObjectに含めたい場合
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1sprite" class="md-nav__link">
+    <span class="md-ellipsis">
+      さらに、1つのアセットから複数のSpriteを生成している場合
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1260,6 +1344,55 @@
 </ul>
 <h2 id="_4">実装（基本編）</h2>
 <h3 id="catalogs">ゲーム起動時にCatalogsを生成する</h3>
+<h3 id="catalog">各Catalogをビルドするクラスを作る</h3>
+<h2 id="tips">Tips</h2>
+<h3 id="spritescriptableobject">画像(Sprite)などをScriptableObjectに含めたい場合</h3>
+<p>先に画像(Sprite)などを登録しておき、そのGUIDで紐づける。</p>
+<p>たとえばSprite画像をScriptableObjectに含めたい場合のスクリプト。
+thumb_idがSpriteのGUID、mがメモリに展開中のScriptableObject、thumbnailがSpriteを紐づけるメンバであるとする。</p>
+<pre><code>
+// GUIDをSpriteに変換
+if (!string.IsNullOrEmpty(thumb_id))
+{
+    string path = AssetDatabase.GUIDToAssetPath(thumb_id);
+    if (!string.IsNullOrEmpty(path))
+    {
+        m.thumbnail = AssetDatabase.LoadAssetAtPath&lt;Sprite&gt;(path);
+    }
+    else
+    {
+        UnityEngine.Debug.LogWarning($&quot;GUID:{thumb_id} のスプライトが見つかりませんでした&quot;);
+        m.thumbnail = null;
+    }
+}
+
+</code></pre>
+<h3 id="1sprite">さらに、1つのアセットから複数のSpriteを生成している場合</h3>
+<p>SpriteのGUIDと、Spriteの名前で紐づける。
+guidがSpriteのGUID、spriteNameがSpriteの名前である場合。resultが返されるSpriteとなる。</p>
+<pre><code>
+string path = AssetDatabase.GUIDToAssetPath(guid);
+if (!string.IsNullOrEmpty(path))
+{
+    // 複数のSprite（サブアセット）を取得
+    Object[] assets = AssetDatabase.LoadAllAssetRepresentationsAtPath(path);
+    foreach (Object obj in assets)
+    {
+        if (obj is Sprite sprite &amp;&amp; sprite.name == spriteName)
+        {
+            result = sprite;
+            return;
+        }
+    }
+
+    Debug.LogWarning($&quot;GUID:{guid} のスプライトシート内に '{spriteName}' という名前のスプライトが見つかりませんでした&quot;);
+}
+else
+{
+    Debug.LogWarning($&quot;GUID:{guid} のアセットが見つかりませんでした&quot;);
+}
+
+</code></pre>
 <h2 id="_5">参考サイト</h2>
 <ul>
 <li><a href="https://note.com/yamasho55/n/n04bd2f6d136d">【備忘録】ScriptableObjectとCSVの連携・「転生女騎士、アパートに住む【放置ゲーム】」の作り方（3）【Unity】</a></li>

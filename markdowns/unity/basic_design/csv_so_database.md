@@ -49,7 +49,66 @@
 
 ### ゲーム起動時にCatalogsを生成する
 
+### 各Catalogをビルドするクラスを作る
 
+
+## Tips
+
+### 画像(Sprite)などをScriptableObjectに含めたい場合
+
+先に画像(Sprite)などを登録しておき、そのGUIDで紐づける。
+
+たとえばSprite画像をScriptableObjectに含めたい場合のスクリプト。
+thumb_idがSpriteのGUID、mがメモリに展開中のScriptableObject、thumbnailがSpriteを紐づけるメンバであるとする。
+
+```
+
+// GUIDをSpriteに変換
+if (!string.IsNullOrEmpty(thumb_id))
+{
+    string path = AssetDatabase.GUIDToAssetPath(thumb_id);
+    if (!string.IsNullOrEmpty(path))
+    {
+        m.thumbnail = AssetDatabase.LoadAssetAtPath<Sprite>(path);
+    }
+    else
+    {
+        UnityEngine.Debug.LogWarning($"GUID:{thumb_id} のスプライトが見つかりませんでした");
+        m.thumbnail = null;
+    }
+}
+
+```
+
+### さらに、1つのアセットから複数のSpriteを生成している場合
+
+SpriteのGUIDと、Spriteの名前で紐づける。
+guidがSpriteのGUID、spriteNameがSpriteの名前である場合。resultが返されるSpriteとなる。
+
+```
+
+string path = AssetDatabase.GUIDToAssetPath(guid);
+if (!string.IsNullOrEmpty(path))
+{
+    // 複数のSprite（サブアセット）を取得
+    Object[] assets = AssetDatabase.LoadAllAssetRepresentationsAtPath(path);
+    foreach (Object obj in assets)
+    {
+        if (obj is Sprite sprite && sprite.name == spriteName)
+        {
+            result = sprite;
+            return;
+        }
+    }
+
+    Debug.LogWarning($"GUID:{guid} のスプライトシート内に '{spriteName}' という名前のスプライトが見つかりませんでした");
+}
+else
+{
+    Debug.LogWarning($"GUID:{guid} のアセットが見つかりませんでした");
+}
+
+```
 
 ## 参考サイト
 
